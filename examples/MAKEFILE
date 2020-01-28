@@ -1,0 +1,15 @@
+CXXFLAGS = $(CXXFLAGS) /EHsc -I..\src\
+
+all:	test.exe
+
+OBJS = recvBuff.obj
+
+test.exe:	$(OBJS) ..\src\libDualBuff.lib
+	LINK /out:$@ $(OBJS) ..\src\libDualBuff.lib
+ 
+.cpp.obj:
+	$(CXX) -c $(CXXFLAGS) $<
+
+clean:
+	-del *.exe *.obj
+

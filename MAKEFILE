@@ -1,0 +1,23 @@
+all : lib test
+
+lib:
+	cd src
+	$(MAKE)
+	cd ..
+
+lib-clean:
+	cd src
+	$(MAKE) clean
+	cd ..
+
+test:
+	cd examples
+	$(MAKE)
+	cd ..
+
+test-clean:
+	cd examples
+	$(MAKE) clean
+	cd ..
+
+clean: lib-clean test-clean

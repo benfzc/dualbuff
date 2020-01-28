@@ -1,0 +1,16 @@
+CPPFLAGS = $(CPPFLAGS) /EHsc
+
+all: libDualBuff.lib
+
+OBJS = dualBuff.obj
+
+
+libDualBuff.lib: $(OBJS)
+	LIB /OUT:$@ $(OBJS)
+
+#.cpp.obj:
+#	$(CXX) -c $(CPPFLAGS) $<
+
+clean:
+	-del *.obj *.lib
+
